@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationDetail should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="euiPage euiPage--grow"
+  >
+    <div
+      class="euiPageBody euiPageBody--borderRadiusNone"
+    >
+      <div
+        class="euiPanel euiPanel--paddingLarge euiPanel--borderRadiusNone euiPanel--plain euiPanel--noShadow euiPageContent euiPageContent--borderRadiusNone"
+        role="main"
+        style="display: flex;"
+      >
+        <div
+          class="euiPanel euiPanel--borderRadiusMedium euiPanel--subdued euiPanel--noShadow euiPanel--noBorder euiPageContent euiPageContent--verticalCenter euiPageContent--horizontalCenter"
+          data-testid="user-detail"
+          role="main"
+        >
+          <div
+            class="spinner-custom"
+          >
+            <span
+              class="euiLoadingSpinner euiLoadingSpinner--large"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

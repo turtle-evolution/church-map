@@ -1,0 +1,9 @@
+/.yarn/**
+/lib/**
+/node_modules/**
+/tests/fixtures/**
+/tmp/**
+
+build
+node_modules
+.github

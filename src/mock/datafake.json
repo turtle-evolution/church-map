@@ -1,0 +1,20 @@
+[
+  {
+    "id": "location_1",
+    "image": "https://source.unsplash.com/400x200/?Nature",
+    "title": "Elastic in Nature1",
+    "description": "Example of a card's description. Stick to one or two sentences1."
+  },
+  {
+    "id": "location_2",
+    "image": "https://source.unsplash.com/400x200/?Nature",
+    "title": "Elastic in Nature2",
+    "description": "Example of a card's description. Stick to one or two sentences2."
+  },
+  {
+    "id": "location_3",
+    "image": "https://source.unsplash.com/400x200/?Nature",
+    "title": "Elastic in Nature3",
+    "description": "Example of a card's description. Stick to one or two sentences3."
+  }
+]
