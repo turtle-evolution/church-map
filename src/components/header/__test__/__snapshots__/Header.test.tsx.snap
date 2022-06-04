@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Component should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="euiHeader euiHeader--default euiHeader--static"
+  >
+    <div
+      class="euiHeaderSectionItem euiHeaderSectionItem--borderRight"
+    >
+      <a
+        class="euiHeaderLogo"
+        data-testid="logo"
+        rel="noreferrer"
+      >
+        <svg
+          aria-hidden="true"
+          aria-label="Elastic"
+          class="euiIcon euiIcon--large euiIcon-isLoading euiHeaderLogo__icon"
+          focusable="false"
+          height="16"
+          role="img"
+          viewBox="0 0 16 16"
+          width="16"
+          xmlns="http://www.w3.org/2000/svg"
+        />
+        <span
+          class="euiHeaderLogo__text"
+        >
+          Location
+        </span>
+      </a>
+    </div>
+    <div
+      class="euiHeaderSectionItem euiHeaderSectionItem--borderLeft"
+    >
+      <nav
+        aria-label="App navigation links example"
+        class="euiHeaderLinks"
+      >
+        <div
+          class="euiHeaderLinks__list euiHeaderLinks__list--gutterS"
+        >
+          <button
+            class="euiButtonEmpty euiButtonEmpty--primary euiHeaderLink euiHeaderLink-isActive"
+            type="button"
+          >
+            <span
+              class="euiButtonContent euiButtonEmpty__content"
+            >
+              <span
+                class="euiButtonEmpty__text"
+              >
+                Docs
+              </span>
+            </span>
+          </button>
+          <button
+            class="euiButtonEmpty euiButtonEmpty--text euiHeaderLink"
+            type="button"
+          >
+            <span
+              class="euiButtonContent euiButtonEmpty__content"
+            >
+              <span
+                class="euiButtonEmpty__text"
+              >
+                Code
+              </span>
+            </span>
+          </button>
+          <button
+            class="euiButtonEmpty euiButtonEmpty--text euiHeaderLink"
+            type="button"
+          >
+            <span
+              class="euiButtonContent euiButtonEmpty__content"
+            >
+              <span
+                class="euiButtonEmpty__text"
+              >
+                Help
+              </span>
+            </span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </div>
+</DocumentFragment>
+`;
