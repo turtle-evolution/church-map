@@ -36,9 +36,7 @@
     "test:watch": "npm test -- --watchAll=true --verbose=true",
     "view:coverage": "open coverage/lcov-report/index.html",
     "test:debug": "react-scripts --inspect-brk test --runInBand --no-cache",
-    "test:push": "cross-env CI=true yarn test --noStackTrace --coverage=false --watchAll=false --verbose=false --testTimeout=20000",
-    "postinstall": "husky install",
-    "prepare": "husky install && npm run build"
+    "test:push": "cross-env CI=true yarn test --noStackTrace --coverage=false --watchAll=false --verbose=false --testTimeout=20000"
   },
   "eslintConfig": {
     "extends": [
