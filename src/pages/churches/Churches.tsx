@@ -40,7 +40,6 @@ const Churches = (): JSX.Element => {
     );
   }
   if (error) {
-    console.error(error);
     return <div>{error}</div>;
   }
 
