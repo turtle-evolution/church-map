@@ -110,5 +110,5 @@
     "react-test-renderer": "^17.0.2"
   },
   "peerDependencies": {},
-  "homepage": "./*"
+  "homepage": "https://turtle-evolution.github.io/church-map/"
 }
