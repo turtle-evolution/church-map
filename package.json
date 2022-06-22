@@ -1,5 +1,5 @@
 {
-  "name": "react-ts",
+  "name": "church-map",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -110,5 +110,5 @@
     "react-test-renderer": "^17.0.2"
   },
   "peerDependencies": {},
-  "homepage": "https://turtle-evolution.github.io/church-map/"
+  "homepage": "."
 }
