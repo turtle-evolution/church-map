@@ -9,13 +9,14 @@ import {
   useEuiI18n
 } from '@elastic/eui';
 import useIcon from 'hook/useIcon';
+import { ROUTES_ENUM } from 'routes/routes-enum';
 
 const Header = (): JSX.Element => {
   const iconVisMapRegion = useIcon('visMapRegion');
   const history = useHistory();
 
   const goHome = () => {
-    history.push('/');
+    history.push(ROUTES_ENUM.HOME);
   };
 
   return (
