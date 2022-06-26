@@ -31,7 +31,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
+    "start": "PORT=3010 react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test",
@@ -110,5 +110,5 @@
     "react-test-renderer": "^17.0.2"
   },
   "peerDependencies": {},
-  "homepage": "."
+  "homepage": "https://turtle-evolution.github.io/church-map/"
 }

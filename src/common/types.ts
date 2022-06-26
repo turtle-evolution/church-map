@@ -13,3 +13,11 @@ export interface IUser {
     };
   };
 }
+
+export interface IChurch {
+  id: number;
+  name: string;
+  address: string;
+  images: string;
+  description: string;
+}

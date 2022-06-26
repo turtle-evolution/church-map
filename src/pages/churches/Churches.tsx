@@ -12,7 +12,7 @@ import {
   EuiTitle,
   useEuiI18n
 } from '@elastic/eui';
-import { IUser } from 'common/types';
+import { IChurch } from 'common/types';
 import { CardFooter } from 'components';
 import { useHistory } from 'react-router-dom';
 import { ROUTES_ENUM } from 'routes/routes-enum';
@@ -23,6 +23,9 @@ const Churches = (): JSX.Element => {
       churchs {
         id
         name
+        address
+        images
+        description
       }
     }
   `;
@@ -43,8 +46,8 @@ const Churches = (): JSX.Element => {
     return <div>{error}</div>;
   }
 
-  const goDetail = (userId: string) => {
-    history.push(`${ROUTES_ENUM.USER}/${userId}`);
+  const goDetail = (churchId: number) => {
+    history.push(`${ROUTES_ENUM.USER}/${churchId}`);
   };
 
   return (
@@ -61,19 +64,23 @@ const Churches = (): JSX.Element => {
         </EuiTitle>
         <EuiPageBody>
           <EuiFlexGrid columns={3} data-testid="user-list">
-            {data.churchs.map((user: IUser) => (
-              <EuiFlexItem key={user.id} grow={3} data-testid="user-item">
+            {data.churchs.map((church: IChurch) => (
+              <EuiFlexItem key={church.id} grow={3} data-testid="church-item">
                 <EuiCard
                   textAlign="left"
-                  title={user.name}
-                  description={user.name}
+                  title={church.name}
+                  titleElement="h2"
+                  description={church.address}
+                  image={`${ROUTES_ENUM.HOME}${church.images}`}
                   footer={
                     <CardFooter
-                      onClick={() => goDetail(user.id)}
+                      onClick={() => goDetail(church.id)}
                       textButton={translateBtnGo}
                     />
                   }
-                />
+                >
+                  {church.description}
+                </EuiCard>
               </EuiFlexItem>
             ))}
           </EuiFlexGrid>
