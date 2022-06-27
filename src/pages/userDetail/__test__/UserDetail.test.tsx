@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 
 import axios from 'axios';
-import LocationDetail from '../LocationDetail';
+import UserDetail from '../UserDetail';
 
 jest.mock('mock/api');
 
@@ -25,16 +25,16 @@ const fakeUser = {
   }
 };
 
-describe('LocationDetail', () => {
+describe('UserDetail', () => {
   test('should take a snapshot', () => {
-    const { asFragment } = render(<LocationDetail />);
+    const { asFragment } = render(<UserDetail />);
 
     expect(asFragment()).toMatchSnapshot();
   });
 
   test('should be render dataFake', async () => {
     mockedAxios.get.mockResolvedValue(fakeUser);
-    render(<LocationDetail />);
+    render(<UserDetail />);
     expect(screen.getByTestId('user-detail')).toContainHTML(
       '<div class="spinner-custom"><span class="euiLoadingSpinner euiLoadingSpinner--large" /></div>'
     );

@@ -20,4 +20,5 @@ export interface IChurch {
   address: string;
   images: string;
   description: string;
+  longDescription: string;
 }

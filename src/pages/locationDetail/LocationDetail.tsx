@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 
 import {
   EuiPage,
@@ -10,32 +8,38 @@ import {
   EuiLoadingSpinner
 } from '@elastic/eui';
 
-import { IUser } from 'common/types';
+import { gql, useQuery } from '@apollo/client';
 
 const LocationDetail = (): JSX.Element => {
-  const { userId } = useParams<{ userId: string }>();
-  const [infoLocation, setInfoLocation] = useState<IUser>();
+  const { locationId } = useParams<{ locationId: string }>();
 
-  useEffect(() => {
-    let mounted = true;
-    if (userId) {
-      const getUser = async () => {
-        const response = await axios.get(
-          `https://jsonplaceholder.typicode.com/users/${userId}`
-        );
-        if (mounted && response) {
-          setInfoLocation(response.data);
-        }
-      };
-
-      getUser();
+  const GET_CHURCH_DETAIL = gql`
+    query GetChurchDetail($churchId: Int!) {
+      churchs(where: { id: { _eq: $churchId } }) {
+        name
+        long_description
+        address
+      }
     }
+  `;
+  const { loading, error, data } = useQuery(GET_CHURCH_DETAIL, {
+    variables: {
+      churchId: locationId
+    }
+  });
 
-    return () => {
-      mounted = false;
-    };
-  }, [userId]);
+  if (loading) {
+    return (
+      <div className="spinner-custom">
+        <EuiLoadingSpinner size="l" />
+      </div>
+    );
+  }
+  if (error) {
+    return <div>{error}</div>;
+  }
 
+  const dataDetail = data.churchs[0];
   return (
     <EuiPage paddingSize="none">
       <EuiPageBody>
@@ -52,16 +56,10 @@ const LocationDetail = (): JSX.Element => {
             hasShadow={false}
             data-testid="user-detail"
           >
-            {infoLocation ? (
-              <EuiEmptyPrompt
-                title={<span>{infoLocation.name}</span>}
-                body={<>{infoLocation.address.street}</>}
-              />
-            ) : (
-              <div className="spinner-custom">
-                <EuiLoadingSpinner size="l" />
-              </div>
-            )}
+            <EuiEmptyPrompt
+              title={<span>{dataDetail.name}</span>}
+              body={<>{dataDetail.long_description || dataDetail.address}</>}
+            />
           </EuiPageContent>
         </EuiPageContent>
       </EuiPageBody>
