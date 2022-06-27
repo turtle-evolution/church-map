@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LocationDetail should take a snapshot 1`] = `
+exports[`UserDetail should take a snapshot 1`] = `
 <DocumentFragment>
   <div
     class="euiPage euiPage--grow"

@@ -19,7 +19,7 @@ import { ROUTES_ENUM } from 'routes/routes-enum';
 
 const Churches = (): JSX.Element => {
   const GET_MY_CHURCHES = gql`
-    query getChurs {
+    query GetChurches {
       churchs {
         id
         name
@@ -47,7 +47,7 @@ const Churches = (): JSX.Element => {
   }
 
   const goDetail = (churchId: number) => {
-    history.push(`${ROUTES_ENUM.USER}/${churchId}`);
+    history.push(`${ROUTES_ENUM.LOCATION}/${churchId}`);
   };
 
   return (
@@ -63,7 +63,7 @@ const Churches = (): JSX.Element => {
           </EuiTextAlign>
         </EuiTitle>
         <EuiPageBody>
-          <EuiFlexGrid columns={3} data-testid="user-list">
+          <EuiFlexGrid columns={4} data-testid="church-list">
             {data.churchs.map((church: IChurch) => (
               <EuiFlexItem key={church.id} grow={3} data-testid="church-item">
                 <EuiCard
