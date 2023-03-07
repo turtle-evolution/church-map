@@ -5,7 +5,6 @@ import '@elastic/eui/dist/eui_theme_light.css';
 import './index.css';
 
 import 'styles/styles.scss';
-import 'styles/styles2.scss';
 
 ReactDOM.render(
   <React.StrictMode>
