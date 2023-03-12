@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import {
   EuiPage,
-  EuiPageContent,
+  EuiPageSection,
   EuiEmptyPrompt,
   EuiPageBody,
   EuiLoadingSpinner
@@ -15,7 +15,7 @@ const LocationDetail = (): JSX.Element => {
 
   const GET_CHURCH_DETAIL = gql`
     query GetChurchDetail($churchId: Int!) {
-      churchs(where: { id: { _eq: $churchId } }) {
+      tbl_churches(where: { id: { _eq: $churchId } }) {
         name
         long_description
         address
@@ -39,29 +39,22 @@ const LocationDetail = (): JSX.Element => {
     return <div>{error}</div>;
   }
 
-  const dataDetail = data.churchs[0];
+  const dataDetail = data.tbl_churches[0];
   return (
     <EuiPage paddingSize="none">
       <EuiPageBody>
-        <EuiPageContent
-          borderRadius="none"
-          hasShadow={false}
-          style={{ display: 'flex' }}
-        >
-          <EuiPageContent
-            verticalPosition="center"
-            horizontalPosition="center"
+        <EuiPageSection style={{ display: 'flex' }}>
+          <EuiPageSection
             paddingSize="none"
             color="subdued"
-            hasShadow={false}
             data-testid="user-detail"
           >
             <EuiEmptyPrompt
               title={<span>{dataDetail.name}</span>}
               body={<>{dataDetail.long_description || dataDetail.address}</>}
             />
-          </EuiPageContent>
-        </EuiPageContent>
+          </EuiPageSection>
+        </EuiPageSection>
       </EuiPageBody>
     </EuiPage>
   );
