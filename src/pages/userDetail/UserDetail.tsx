@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import {
   EuiPage,
-  EuiPageContent,
+  EuiPageSection,
   EuiEmptyPrompt,
   EuiPageBody,
   EuiLoadingSpinner
@@ -39,17 +39,10 @@ const UserDetail = (): JSX.Element => {
   return (
     <EuiPage paddingSize="none">
       <EuiPageBody>
-        <EuiPageContent
-          borderRadius="none"
-          hasShadow={false}
-          style={{ display: 'flex' }}
-        >
-          <EuiPageContent
-            verticalPosition="center"
-            horizontalPosition="center"
+        <EuiPageSection style={{ display: 'flex' }}>
+          <EuiPageSection
             paddingSize="none"
             color="subdued"
-            hasShadow={false}
             data-testid="user-detail"
           >
             {infoUser ? (
@@ -62,8 +55,8 @@ const UserDetail = (): JSX.Element => {
                 <EuiLoadingSpinner size="l" />
               </div>
             )}
-          </EuiPageContent>
-        </EuiPageContent>
+          </EuiPageSection>
+        </EuiPageSection>
       </EuiPageBody>
     </EuiPage>
   );
