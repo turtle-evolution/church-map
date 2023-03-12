@@ -20,7 +20,7 @@ import { ROUTES_ENUM } from 'routes/routes-enum';
 const Churches = (): JSX.Element => {
   const GET_MY_CHURCHES = gql`
     query GetChurches {
-      churchs {
+      tbl_churches {
         id
         name
         address
@@ -64,7 +64,7 @@ const Churches = (): JSX.Element => {
         </EuiTitle>
         <EuiPageBody>
           <EuiFlexGrid columns={4} data-testid="church-list">
-            {data.churchs.map((church: IChurch) => (
+            {data.tbl_churches.map((church: IChurch) => (
               <EuiFlexItem key={church.id} grow={3} data-testid="church-item">
                 <EuiCard
                   textAlign="left"
